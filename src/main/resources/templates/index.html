@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Berbagi Foundation</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link th:href="@{/bootstrap/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link th:href="@{/bootstrap/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        <!-- CSS -->
+        <link th:href="@{/css/berbagi.min.css}" rel="stylesheet">
+        <link th:href="@{/css/style.css}" rel="stylesheet">	
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// --> 
+        <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+            <![endif]-->
+    </head>
+    <body id="page-top" class="index">
+        <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+            <div class="splash">
+                <div class="img"></div>
+                Welcome -<span th:text="${session.name}"></span>-</div>
+
+            <div class="container"> 
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i> </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">Berbagi.com</a></div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden"> <a href="#page-top"></a> </li>
+                        <li> <a class="page-scroll" href="http://localhost:8080/dashboard" >Dashboard</a> </li>
+                        <li> <a class="page-scroll" href="#services">Services</a> </li>
+                        <li> <a class="page-scroll" href="#portfolio">Activities</a> </li>
+                        <li> <a class="page-scroll" href="#about">About</a> </li>
+                        <li> <a class="page-scroll" href="#team">Team</a> </li>
+                        
+                        <li> <a class="page-scroll" href="#contact">Contact</a> </li>
+                        
+                        <li> <a onclick="return confirm('Are you sure ?')" class="tombol-login" href="http://localhost:8080/logout"><img th:src="@{/img/login-20.png}"  /> Logout</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse --> 
+            </div>
+            <!-- /.container-fluid --> 
+        </nav>
+
+
+        <!-- Navigation -->
+
+
+        <!-- Header -->
+        <header>
+    
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in">Welcome To Our Foundation</div>
+                    <div class="intro-heading">HELLO <span th:text="${session.name}"></span>!</div>
+                    <a href="#services" class="page-scroll btn btn-xl">Our SERVICES</a> </div>
+            </div>
+        </header>
+
+       <!-- Services Section -->
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">SERVICES</h2>
+        <h3 class="section-subheading text-muted">Kita bergerak di bidang pembangunan masyarakat agar menciptakan kemakmuran yang dicita-citakan oleh masyarakat Indonesia sehingga terjadinya kedamaian antar sesama.</h3>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4"> <span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-book fa-stack-1x fa-inverse"></i> </span>
+        <h4 class="service-heading">EDUCATION</h4>
+        <p class="text-muted">Berbagi.com mengembangkan pendidikan untuk mengsejahterakan masyarakat indonesia dan memunahkan masyarakat yang masih buta huruf.</p>
+      </div>
+      <div class="col-md-4"> <span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-money fa-stack-1x fa-inverse"></i> </span>
+        <h4 class="service-heading">ECONOMY</h4>
+        <p class="text-muted">Memajukan perekonomian indonesia dengan memberikan fasilitas pusat ekonomi dan pelatihan-pelatihan UMKM demi masyarakat Indonesia yang berkemajuan.</p>
+      </div>
+      <div class="col-md-4"> <span class="fa-stack fa-4x"> <i class="fa fa-circle fa-stack-2x text-primary"></i> <i class="fa fa-building-o fa-stack-1x fa-inverse"></i> </span>
+        <h4 class="service-heading">DEVELOPMENT</h4>
+        <p class="text-muted">Pembangunan merupakan tujuan awal dari yayasan Berbagi.com agar terciptanya kesejahteraan dan hilangnya ketimpangan sosial yang didasari oleh tidak meratanya pembangunan nasional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Activities Section -->
+<section id="portfolio" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">WE NEED YOUR DONATION</h2>
+        <h3 class="section-subheading text-muted">Berikut adalah beberapa aktivitas dari yayasan kami yang masih membutuhkan dana.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 portfolio-item"> <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content"> <i class="fa fa-plus fa-3x"></i> </div>
+        </div>
+        <img src="img/activities/roundicons.jpg" class="img-responsive" alt=""> </a>
+        <div class="portfolio-caption">
+          <h4>Pembangunan Masjid</h4>
+          <p class="text-muted">Desa Cirangkong</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item"> <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content"> <i class="fa fa-plus fa-3x"></i> </div>
+        </div>
+        <img src="img/activities/startup-framework.jpg" class="img-responsive" alt=""> </a>
+        <div class="portfolio-caption">
+          <h4>Pembangunan Pusat Dagang</h4>
+          <p class="text-muted">Desa Cijambe</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item"> <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content"> <i class="fa fa-plus fa-3x"></i> </div>
+        </div>
+        <img src="img/activities/treehouse.jpg" class="img-responsive" alt=""> </a>
+        <div class="portfolio-caption">
+          <h4>Pembangunan Jembatan</h4>
+          <p class="text-muted">Kota Subang</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item"> <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content"> <i class="fa fa-plus fa-3x"></i> </div>
+        </div>
+        <img src="img/activities/golden.jpg" class="img-responsive" alt=""> </a>
+        <div class="portfolio-caption">
+          <h4>Pembangunan Pesantren</h4>
+          <p class="text-muted">Desa Cirangkong</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item"> <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content"> <i class="fa fa-plus fa-3x"></i> </div>
+        </div>
+        <img src="img/activities/escape.jpg" class="img-responsive" alt=""> </a>
+        <div class="portfolio-caption">
+          <h4>Penggalangan Dana</h4>
+          <p class="text-muted">Musibah Banjir Subang</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item"> <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content"> <i class="fa fa-plus fa-3x"></i> </div>
+        </div>
+        <img src="img/activities/dreams.jpg" class="img-responsive" alt=""> </a>
+        <div class="portfolio-caption">
+          <h4>Beasiswa Anak Yatim</h4>
+          <p class="text-muted">Desa Cipayung</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">About</h2>
+        <h3 class="section-subheading text-muted">Ini adalah cerita perjuangan</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="timeline">
+          <li>
+            <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/1.jpg" alt=""> </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>2020-2021</h4>
+                <h4 class="subheading">Our Humble Beginnings</h4>
+              </div>
+              <div class="timeline-body"><span class="text-muted">Berawal dari perkumpulan anak remaja yang memikirkan kondisi pembangunan masa depan masyarakat indonesia. Azzam, Dzakirah, dan Firyal mengusung ide untuk menampung tujuan bersama dalam bentuk yayasan yang akan bergerak di bidang pembangunan nasional.</span></div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/2.jpg" alt=""> </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>JUNY 2021</h4>
+                <h4 class="subheading">An Foundation is Born</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">Yayasan Berbagi.com terbentuk secara resmi pada 20 juni 2021 atas semangat perjuangan dari Azzam, Dzakirah dan Firyal.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/3.jpg" alt=""> </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>JULY 2021</h4>
+                <h4 class="subheading">Massive Development</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">Yayasan melakukan kegiatan pembangunan secara massive dalam rangka pembangunan desa cirangkong menjadi desa yang maju dan sejahtera. Pembebasan lahan yang digunakan untuk fasilitas pendidikan dan ekonomi masyarakat.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/4.jpg" alt=""> </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>DECEMBER 2021</h4>
+                <h4 class="subheading">The Best of Foundation</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">Berbagi.com mendapatkan penghargaan berupa yayasan terbaik se-Indonesia berkat dukungan masyarakat Indonesia</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <h4>Be Part <br>
+                Of Our <br>
+                Story!</h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Our Amazing Team</h2>
+        <h3 class="section-subheading text-muted">CO-Founder Berbagi.com</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="team-member"> <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+          <h4>Azzam Zaidan Nur</h4>
+          <p class="text-muted">CEO &amp; CO-Founder</p>
+          <ul class="list-inline social-buttons">
+            <li><a href="https://www.instagram.com/azzamzn" target="_blank" ><i class="fa fa-instagram"></i></a> </li>
+            <li><a href="https://twitter.com/filosifikata_ku" target="_blank" ><i class="fa fa-twitter"></i></a> </li>
+            <li><a href="https://www.linkedin.com/in/azzam-zaidan-b02b27148/" target="_blank" ><i class="fa fa-linkedin"></i></a> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="team-member"> <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
+          <h4>Dzakirah Septialisa</h4>
+          <p class="text-muted">CEO &amp; CO-Founder</p>
+          <ul class="list-inline social-buttons">
+            <li><a href="https://www.instagram.com/dzaasls/" target="_blank" ><i class="fa fa-instagram"></i></a> </li>
+            <li><a href="https://twitter.com/filosifikata_ku" target="_blank"><i class="fa fa-twitter"></i></a> </li>
+            <li><a href="https://www.linkedin.com/in/azzam-zaidan-b02b27148/" target="_blank" ><i class="fa fa-linkedin"></i></a> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="team-member"> <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+          <h4>Firyal Nisrina Mumtaz</h4>
+          <p class="text-muted">CEO &amp; CO-Founder</p>
+          <ul class="list-inline social-buttons">
+            <li><a href="https://www.instagram.com/firyalnisrinaa/" target="_blank" ><i class="fa fa-instagram"></i></a> </li>
+            <li><a href="https://twitter.com/filosifikata_ku" target="_blank" ><i class="fa fa-twitter"></i></a> </li>
+            <li><a href="https://www.linkedin.com/in/azzam-zaidan-b02b27148/" target="_blank" ><i class="fa fa-linkedin"></i></a> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <p class="large text-muted">Kami tidak berjuang sendirian, bersama masyarakat Indonesia kita bisa !</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Location-->
+<section id="location">
+<div class="container">
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <h2 class="section-heading">OUR LOCATION</h2>
+    <h3 class="section-subheading text-muted">Let's Check Our Location</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5090708975613!2d106.8228753153742!3d-6.196363362431055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5a3628d8a43%3A0x214e8d22ed4fc7c8!2sDuch%20Bank%20AG!5e0!3m2!1sid!2sid!4v1624706201283!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="googlemaps"></iframe>
+  </div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Contact Us</h2>
+        <h3 class="section-subheading text-muted">Kami menerima keritik dan saran. Saran anda sangat membantu kami :)</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <form name="sentMessage"  action="" method="post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name *" name="namekontak" required data-validation-required-message="Please enter your name." value="">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email *" name="emailkontak" required data-validation-required-message="Please enter your email address.">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Phone *" name="nokontak" required data-validation-required-message="Please enter your phone number.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Your Message *" name="messagekontak" required data-validation-required-message="Please enter a message."></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-12 text-center">
+              <div id="success"></div>
+              <button onclick="return confirm('Are you sure ?')" type="submit" class="btn btn-xl">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+	<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"> <span class="copyright">Copyright &copy; Berbagi.com 2021</span></div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li><a href="https://www.instagram.com/berbagicom/" target="_blank"><i class="fa fa-instagram"></i></a> </li>
+          <li><a href="https://www.youtube.com/channel/UC0G0ZZGqxz-sFDaPQ82b9Mw?view_as=subscriber" target="_blank"><i class="fa fa-youtube"></i></a> </li>
+          <li><a href="https://www.linkedin.com/feed/?trk=homepage-basic_google-one-tap-submit"target="_blank"><i class="fa fa-linkedin"></i></a> </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li><a href="#">Privacy Policy</a> </li>
+          <li><a href="#">Terms of Use</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- jQuery --> 
+<script type="text/javascript" th:src="@{/bootstrap/jquery/jquery.min.js}"></script> 
+
+<!-- Bootstrap Core JavaScript --> 
+<script type="text/javascript" th:src="@{bootstrap/bootstrap/js/bootstrap.min.js}"></script> 
+
+<!-- Plugin JavaScript --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script> 
+
+<!-- Contact Form JavaScript --> 
+<script type="text/javascript" th:src="@{js/jqBootstrapValidation.js}"></script> 
+<script type="text/javascript" th:src="@{js/contact_me.js}"></script> 
+
+<!-- Theme JavaScript --> 
+<script type="text/javascript" th:src="@{js/berbagi.min.js}"></script>
+
+<!-- Portfolio Modals --> 
+<!-- Use the modals below to showcase details about your portfolio projects! --> 
+
+<!-- Portfolio Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body"> 
+              <!-- Project Details Go Here -->
+              <h2>Pembangunan Masjid</h2>
+              <p class="item-intro text-muted">Pembangunan masjid di Desa Cirangkong, Subang, Jawa Barat.</p>
+              <img class="img-responsive img-centered" src="img/activities/roundicons-free.jpg" alt="">
+              <p>Untuk sholat berjamaah, Guru-guru dan para santri selama ini terpaksa menumpang di masjid desa seberang dan harus menempuh jarak sekitar 5km. Sementara bantuan dari pemerintah para donatur selama ini hanya ada untuk pembangunan gedung kantor rw yang itu bahkan terealisasi dalam 2 tahun lama nya.</p>
+              <p> <strong>Ingin berdonasi di kegiatan selanjutnya?</strong>Kamu bisa mengeceknya langsung pada sosial media kami <a href="https://www.instagram.com/berbagicom/" target="_blank" >Berbagi.com</a>, atau kamu bisa langsung berdonasi melalui <a href="https://kitabisa.com"target="_blank">here</a>.</p>
+              <ul class="list-inline">
+                <li>Tanggal: 12 Juli 2021</li>
+                <li>Lokasi: Desa Cirangkong</li>
+                <li>Kegiatan: Pembangunan Masjid</li>
+                <li>Pencapaian/Target: IDR 1000.000/IDR 90.000.000</li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>Pembangunan Pusat Dagang</h2>
+              <p class="item-intro text-muted">Pembangunan Pusat Dagang di Desa Cijambe, Subang, Jawa Barat</p>
+              <img class="img-responsive img-centered" src="img/activities/startup-framework-preview.jpg" alt="">
+              <p>Untuk meningkatkan ekonomi Masyarakat Desan Cijambe yayasan kami dengan inisiatif membangun pusat dagang sehingga dapat memajukan perekonomian masyarakat yang notabennya para petani yang bingung untuk menjual hasil tani mereka dan dapat menghindari monopoli harga yang dilakukan oleh oknum yang merugikan masyarakat.</p>
+              <p> <strong>Ingin berdonasi di kegiatan selanjutnya?</strong>Kamu bisa mengeceknya langsung pada sosial media kami <a href="https://www.instagram.com/berbagicom/" target="_blank" >Berbagi.com</a>, atau kamu bisa langsung berdonasi melalui <a href="https://kitabisa.com"target="_blank">here</a>.</p>
+              <ul class="list-inline">
+                <li>Tanggal: 02 Agustus 2021</li>
+                <li>Lokasi: Desa Cijambe</li>
+                <li>Kegiatan: Pembangunan Pusat Dagang</li>
+                <li>Pencapaian/Target: IDR 3000.000/IDR 70.000.000</li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body"> 
+              <!-- Project Details Go Here -->
+              <h2>Pembangunan Jembatan</h2>
+              <p class="item-intro text-muted">Pembangunan Jembatan di Kota Subang, Jawa Barat.</p>
+              <img class="img-responsive img-centered" src="img/activities/treehouse-preview.jpg" alt="">
+              <p>Untuk menempuh perjalanan ke rumah sakit masyarakat desa cirangkong dan cipayung yang berada di Kota Subang harus menempuh jarak 10km karena keduanya dipisahkan oleh tebing tinggi yang curam. Dengan adanya jembatan masyarakat dapat dengan mudah melakukan akomodasi, tidak hanya untuk ke rumah sakit namun untuk keperluan seperti makanan dan kebutuhan rumah dapat dengan mudah didapatkan.</p>
+              <p> <strong>Ingin berdonasi di kegiatan selanjutnya?</strong>Kamu bisa mengeceknya langsung pada sosial media kami <a href="https://www.instagram.com/berbagicom/" target="_blank" >Berbagi.com</a>, atau kamu bisa langsung berdonasi melalui <a href="https://kitabisa.com"target="_blank">here</a>.</p>
+              <ul class="list-inline">
+                <li>Tanggal: 20 September 2021</li>
+                <li>Lokasi: Kota Subang</li>
+                <li>Kegiatan: Pembangunan Jembatan</li>
+                <li>Pencapaian/Target: IDR 5000.000/IDR 150.000.000</li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 4 -->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body"> 
+              <!-- Project Details Go Here -->
+              <h2>Pembangunan Pesantren Quran</h2>
+              <p class="item-intro text-muted">Pembangunan Pesantren di Desa Cirangkong.</p>
+              <img class="img-responsive img-centered" src="img/activities/golden-preview.jpg" alt="">
+              <p>Desa Cirangkong merupakan desa yang mayoritasnya beragama Islam, namun disana belum ada pendidikan agama yang layak untuk para generasi muda disana sehingga yayasan kami membangun pesantren yang dapat digunakan sebagai wadah menimba ilmu agama Islam lebih baik dan mencetak generasi yang berakhlak mulia.</p>
+              <p> <strong>Ingin berdonasi di kegiatan selanjutnya?</strong>Kamu bisa mengeceknya langsung pada sosial media kami <a href="https://www.instagram.com/berbagicom/" target="_blank" >Berbagi.com</a>, atau kamu bisa langsung berdonasi melalui <a href="https://kitabisa.com"target="_blank">here</a>.</p>
+              <ul class="list-inline">
+                <li>Tanggal: 13 Oktober 2021</li>
+                <li>Lokasi: Desa Cirangkong</li>
+                <li>Kegiatan: Pembangunan Pesantren</li>
+                <li>Pencapaian/Target: IDR 50.000.000/IDR 300.000.000</li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 5 -->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body"> 
+              <!-- Project Details Go Here -->
+              <h2>Penggalangan Dana</h2>
+              <p class="item-intro text-muted">Penggalangan Dana Saat Musibah Banjir Bandang Kota Subang, Jawa Barat.</p>
+              <img class="img-responsive img-centered" src="img/activities/escape-preview.jpg" alt="">
+              <p>Banjir bandang yang menimpa Kota Subang merupakan pukulan besar untuk masyarakat sekitar karena mereka kehilangan sejumlah harta dan juga nyawa. Dengan ini kami berkomitmen akan membantu bagi msyarakat Kota Subang yang terdampak dari banjir bandang ini.</p>
+              <p> <strong>Ingin berdonasi di kegiatan selanjutnya?</strong>Kamu bisa mengeceknya langsung pada sosial media kami <a href="https://www.instagram.com/berbagicom/" target="_blank" >Berbagi.com</a>, atau kamu bisa langsung berdonasi melalui <a href="https://kitabisa.com"target="_blank">here</a>.</p>
+              <ul class="list-inline">
+                <li>Tanggal: 7 Oktober 2021</li>
+                <li>Lokasi: Desa Cirangkong</li>
+                <li>Kegiatan: Bantuan Sosial dan Logistik</li>
+                <li>Pencapaian/Target: IDR 1000.000/IDR 10.000.000</li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 6 -->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body"> 
+              <!-- Project Details Go Here -->
+              <h2>Beasiswa Anak Yatim</h2>
+              <p class="item-intro text-muted">Beasiswa Anak Yatim untuk Desa Cipayung, Subang, Jawa Barat.</p>
+              <img class="img-responsive img-centered" src="img/activities/dreams-preview.jpg" alt="">
+              <p>Banyak anak yang kurang beruntung namun punya tekad yang kuat untuk menimba ilmu sehingga mereka harus merelakan impian mereka karena kekurangan dana untuk mengenyam bangku pendidikan yang baik. Yayasan kami memberikan beasiswa kepada 1000 anak yatim di Desa Cipayung. Semoga dengan diadakan nya beasiswa ini generasi selanjutnya dapat menjadi lebih baik karena mendapatkan pendidikan yang layak</p>
+              <p> <strong>Ingin berdonasi di kegiatan selanjutnya?</strong>Kamu bisa mengeceknya langsung pada sosial media kami <a href="https://www.instagram.com/berbagicom/" target="_blank" >Berbagi.com</a>, atau kamu bisa langsung berdonasi melalui <a href="https://kitabisa.com"target="_blank">here</a>.</p>
+              <ul class="list-inline">
+                <li>Tanggal: 29 Desember 2021</li>
+                <li>Lokasi: Desa Cipayung</li>
+                <li>Kegiatan: Beasiswa Anak Yatim</li>
+                <li>Pencapaian/Target: IDR 1000.000/IDR 90.000.000</li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="portfolioModaldonasi" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body"> 
+              <!-- Project Details Go Here -->
+              <h2>HOW TO DONATION ?</h2>
+              <p class="item-intro text-muted">Follow the Step :</p>
+              <br>
+              <p>1. Masukkan nama anda.</p>
+              <p>2. Masukkan total donasi anda.</p>
+              <p>3. Pilih metode pembayaran : </p>
+              <p> - OVO, DANA, GOPAY, SHOPEEPAY : 0852121221</p>
+              <p> - NOREK BCA : 11923810301</p>
+              <p> - NOREK MANDIRI : 1110298120</p>
+              <p>4. Masukkan foto bukti pembayaran.</p>
+              
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Berbagi.com</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link th:href="@{/css/stylelogin.css}" rel="stylesheet" />
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- partial:index.partial.html -->
+        <div class="container" id="container">
+
+            <div class="form-container sign-in-container">
+                <form method="POST" action="#" th:action="@{/login}" th:object="${user}">
+                    <h1>Sign in</h1>
+
+                    <span>use your account</span>
+
+                    <div class="alert alert-danger" th:if="${error}">
+                        <span th:text="${error}"></span>
+                    </div>
+                    <div class="alert alert-success" th:if="${success}">
+                        <span th:text="${success}"></span>
+                    </div>
+
+                    <input th:field="*{email}" type="email" class="form-control" id="example-todo-title" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <input th:field="*{password}" type="password" class="form-control" id="example-todo-title" aria-describedby="emailHelp" placeholder="Enter password" required>
+                    <br>
+                    <button type="submit">Log In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <a href="http://localhost:8080/register"><button class="ghost" id="signup" >REGISTER HERE!</button></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+        <script  src="js/script.js"></script>
+
+    </body>
+</html>
+
