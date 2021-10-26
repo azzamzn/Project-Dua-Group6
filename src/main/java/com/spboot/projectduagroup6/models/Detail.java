@@ -17,32 +17,26 @@ import javax.persistence.Table;
  * @author Dell
  */
 @Entity
-@Table(name="detail")
+@Table(name = "detail")
 public class Detail {
-    
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
-    @Column(name="id_donation")
+
+    @Column(name = "id_donation")
     private long iddonation;
-    
-    @Column(name="id_user")
+
+    @Column(name = "id_user")
     private long iduser;
 
-    @Column(name="name_donation")
-    private String namedonation;
-    
-    @Column(name="name_detail")
-    private String namedetail;
-    
-    @Column(name="receipt")
+    @Column(name = "receipt")
     private String receipt;
-    
-    @Column(name="total")
+
+    @Column(name = "total")
     private long total;
-    
-    @Column(name="method")
+
+    @Column(name = "method")
     private String method;
 
     public long getId() {
@@ -61,8 +55,6 @@ public class Detail {
         this.method = method;
     }
 
-    
-    
     public long getIddonation() {
         return iddonation;
     }
@@ -77,22 +69,6 @@ public class Detail {
 
     public void setIduser(long iduser) {
         this.iduser = iduser;
-    }
-
-    public String getNamedonation() {
-        return namedonation;
-    }
-
-    public void setNamedonation(String namedonation) {
-        this.namedonation = namedonation;
-    }
-
-    public String getNamedetail() {
-        return namedetail;
-    }
-
-    public void setNamedetail(String namedetail) {
-        this.namedetail = namedetail;
     }
 
     public String getReceipt() {
@@ -111,7 +87,4 @@ public class Detail {
         this.total = total;
     }
 
-    
-
-    
 }

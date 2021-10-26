@@ -27,15 +27,6 @@ public class Message {
     @Column(name="id_user")
     private String iduser;
     
-    @Column(name="name")
-    private String name;
-
-    @Column(name="email")
-    private String email;
-    
-    @Column(name="nophone")
-    private String nophone;
-    
     @Column(name="message")
     private String message;
 
@@ -57,29 +48,7 @@ public class Message {
 
 
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getNophone() {
-        return nophone;
-    }
-
-    public void setNophone(String nophone) {
-        this.nophone = nophone;
-    }
+    
 
     public String getMessage() {
         return message;

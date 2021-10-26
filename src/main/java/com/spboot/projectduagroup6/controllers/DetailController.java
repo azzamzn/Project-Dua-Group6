@@ -5,8 +5,8 @@
  */
 package com.spboot.projectduagroup6.controllers;
 
-import com.spboot.projectduagroup6.interfaces.MessageInterface;
-import com.spboot.projectduagroup6.models.Message;
+import com.spboot.projectduagroup6.interfaces.DetailInterface;
+import com.spboot.projectduagroup6.models.Detail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,32 +20,23 @@ import org.springframework.web.bind.annotation.PostMapping;
  *
  * @author Dell
  */
-
 @Controller
-public class MessageController {
-
+public class DetailController {
     @Autowired
-    private MessageInterface messageInterface;
+    private DetailInterface detailInterface;
 
-    @GetMapping("/message")
+    @GetMapping("/detail")
     public String index(Model model) {
-        model.addAttribute("list", messageInterface.getAll());
-        return "message";
+
+        Detail detail = new Detail();
+        model.addAttribute("detail", detail);
+
+        return "detail";
     }
 
-    @GetMapping("/sendmessage")
-    public String create(Model model) {
-        
-        Message message = new Message();
-        model.addAttribute("message", message);
-        
-        return "sendmessage";
-    }
-
-    @PostMapping("/sendmessage/store")
-    public String store(@ModelAttribute("sendmessage") Message message) {
-        messageInterface.store(message);
+    @PostMapping("/detail/store")
+    public String store(@ModelAttribute("detail") Detail detail) throws Exception {
+        detailInterface.store(detail);
         return "redirect:/";
     }
 }
-
