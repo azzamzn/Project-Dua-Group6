@@ -5,7 +5,6 @@
  */
 package com.spboot.projectduagroup6.controllers;
 
-
 import com.spboot.projectduagroup6.interfaces.UserInterface;
 import com.spboot.projectduagroup6.models.User;
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +21,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  *
  * @author Dell
  */
-
 @Controller
-public class LoginController { 
+public class LoginController {
 
     @Autowired
     private UserInterface userInterface;
@@ -38,7 +36,7 @@ public class LoginController {
         return "login";
     }
 
-@PostMapping("/login")
+    @PostMapping("/login")
     public String store(@ModelAttribute("user") User user,
             HttpServletRequest request, RedirectAttributes ra) throws Exception {
         HttpSession session = request.getSession(true);
@@ -59,4 +57,3 @@ public class LoginController {
     }
 
 }
-
