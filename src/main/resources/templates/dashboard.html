@@ -101,32 +101,38 @@
     </div>
   </div>
 </section>
-       <!-- Services Section -->
-        <section id="userdata">
+        
+        <!-- Services Section -->
+        <section id="userdata" >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">AVAILABLE DONATION</h2>
+                        <h2 class="section-heading">DONATION HISTORY</h2>
                         <br>
                         <div id="overflowtest">
                             <table  class="table table-hover ">
                                 <tr>
                                     
                                     
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Total</th>
-                                    <th>Description</th>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Donation's Name</th>
+                                    <th class="text-center">Total</th>
+                                    <th class="text-center">Receipt</th>
+                                    <th class="text-center">Method</th>
                                     
                                    
                                 </tr>
 
 
-                                <tr th:each="donation : ${list}">
-                                    <td th:text="${ donation.id }"></td>
-                                    <td th:text="${ donation.name }"></td>
-                                    <td th:text="${ donation.total }"></td>
-                                    <td th:text="${ donation.description }"></td>
+                                <tr th:each="detail : ${details}">
+                                    <td th:text="${ detail.id }"></td>
+                                    <td th:text="${ detail.user.name }"></td>
+                                    <td th:text="${ detail.donation.name }"></td>
+                                    <td th:text="${ detail.total }"></td>
+                                    <td th:text="${ detail.receipt }"></td>
+                                    <td th:text="${ detail.method }"></td>
+                       
                                     
                                    
                                 </tr>
@@ -136,7 +142,7 @@
                     </div>
                 </div>
         </section>
-
+      
    
     <footer>
         <div class="container">

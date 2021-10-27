@@ -33,17 +33,7 @@ public class DetailController {
     @Autowired
     private DonationInterface donationInterface;
 
-    @GetMapping("/admin/detail")
-    public String index(Model model, HttpServletRequest request) {
-        HttpSession session = request.getSession(true);
-
-        long id_user = (long) session.getAttribute("id");
-
-        List<Detail> details = detailInterface.findByUserId(id_user);
-
-        model.addAttribute("details", details);
-        return "admin";
-    }
+   
 
     @GetMapping("/detail/create")
     public String index(Model model) {
