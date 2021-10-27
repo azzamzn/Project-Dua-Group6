@@ -33,4 +33,9 @@ public class MessageService implements MessageInterface {
     public void store(Message message) {
         this.messageRepository.save(message);
     }
+    
+    @Override
+    public List<Message> findByUserId(long id_user) {
+        return messageRepository.findByUserId(id_user);
+    }
 }

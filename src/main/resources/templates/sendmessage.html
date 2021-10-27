@@ -65,9 +65,7 @@
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading">Contact Us</h2>
                         <h3 class="section-subheading text-muted">Kami menerima keritik dan saran. Saran anda sangat membantu kami :)</h3>
-                        <div class="alert alert-success">
-                            <h4 class="service-heading">ID: <span th:text="${session.id}"></span></h4>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -75,10 +73,7 @@
                         <form method="POST" action="#" th:action="@{/sendmessage/store}" th:object="${message}">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input th:field="*{iduser}" type="text" class="form-control" placeholder="Your ID *"  required data-validation-required-message="Please enter your name." th:value="${session.name}" >
-                                        <p class="help-block text-danger"></p>
-                                    </div>
+                                    
 
 
 

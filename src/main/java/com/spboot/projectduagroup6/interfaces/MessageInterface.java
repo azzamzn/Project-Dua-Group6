@@ -16,4 +16,5 @@ import java.util.List;
 public interface MessageInterface {
     List<Message> getAll();
     void store(Message message);
+    List<Message> findByUserId(long id_user);
 }

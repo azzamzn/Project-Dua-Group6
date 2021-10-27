@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -17,17 +19,18 @@ import javax.persistence.Table;
  * @author Dell
  */
 @Entity
-@Table(name="message")
+@Table(name = "message")
 public class Message {
-    
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
-    @Column(name="id_user")
-    private String iduser;
-    
-    @Column(name="message")
+
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+
+    @Column(name = "message")
     private String message;
 
     public long getId() {
@@ -38,17 +41,13 @@ public class Message {
         this.id = id;
     }
 
-    public String getIduser() {
-        return iduser;
+    public User getUser() {
+        return user;
     }
 
-    public void setIduser(String iduser) {
-        this.iduser = iduser;
+    public void setUser(User user) {
+        this.user = user;
     }
-
-
-
-    
 
     public String getMessage() {
         return message;
@@ -58,12 +57,4 @@ public class Message {
         this.message = message;
     }
 
-
-    
-
-
-
-    
-
-    
 }

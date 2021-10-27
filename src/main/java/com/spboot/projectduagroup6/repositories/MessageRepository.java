@@ -6,6 +6,7 @@
 package com.spboot.projectduagroup6.repositories;
 
 import com.spboot.projectduagroup6.models.Message;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long>{
-    
+    List<Message> findByUserId(long id_user);
 }
