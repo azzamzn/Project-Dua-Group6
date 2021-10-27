@@ -34,4 +34,9 @@ public class DetailService implements DetailInterface {
     public void store(Detail detail) {
         this.detailRepository.save(detail);
     }
+    
+    @Override
+    public List<Detail> findByUserId(long id_user) {
+        return detailRepository.findByUserId(id_user);
+    }
 }

@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -24,11 +26,13 @@ public class Detail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "id_donation")
-    private long iddonation;
+    @ManyToOne
+    @JoinColumn(name = "id_donation")
+    private Donation donation;
 
-    @Column(name = "id_user")
-    private long iduser;
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
 
     @Column(name = "receipt")
     private String receipt;
@@ -55,20 +59,20 @@ public class Detail {
         this.method = method;
     }
 
-    public long getIddonation() {
-        return iddonation;
+    public Donation getDonation() {
+        return donation;
     }
 
-    public void setIddonation(long iddonation) {
-        this.iddonation = iddonation;
+    public void setDonation(Donation donation) {
+        this.donation = donation;
     }
 
-    public long getIduser() {
-        return iduser;
+    public User getUser() {
+        return user;
     }
 
-    public void setIduser(long iduser) {
-        this.iduser = iduser;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getReceipt() {

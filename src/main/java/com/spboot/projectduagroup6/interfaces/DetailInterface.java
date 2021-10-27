@@ -16,4 +16,5 @@ import java.util.List;
 public interface DetailInterface {
     List<Detail> getAll();
     void store(Detail detail);
+    List<Detail> findByUserId(long id_user);
 }
