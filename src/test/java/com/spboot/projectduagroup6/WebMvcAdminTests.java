@@ -135,7 +135,7 @@ public class WebMvcAdminTests {
         
         mockMvc.perform(post("/adddonation/store")
                 .sessionAttrs(sessionattr)
-                .flashAttr("donation", donation))
+                .flashAttr("adddonation", donation))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/"))
                 .andDo(print());
