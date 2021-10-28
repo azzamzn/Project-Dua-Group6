@@ -9,8 +9,6 @@ package com.spboot.projectduagroup6;
  *
  * @author Dzakirah Septialisa
  */
-
-
 import com.spboot.projectduagroup6.models.Donation;
 import com.spboot.projectduagroup6.models.User;
 import java.util.HashMap;
@@ -79,7 +77,7 @@ public class WebMvcDonationTests {
                 .sessionAttrs(sessionattr))
                 .andExpect(status().isOk());
     }
-    
+
     @Test
     public void testCreateDonation() throws Exception {
 
@@ -115,24 +113,22 @@ public class WebMvcDonationTests {
         mockMvc.perform(get("/")
                 .sessionAttrs(sessionattr))
                 .andExpect(status().isOk());
-        
+
         mockMvc.perform(get("/adddonation")
                 .sessionAttrs(sessionattr))
                 .andExpect(status().isOk());
-           
-        
+
         String name = "name-" + RandomString.make(10).toLowerCase();
         String description = "desc-" + RandomString.make(50).toLowerCase();
-        
-        Donation don =  new Donation();
+
+        Donation don = new Donation();
         don.setId(20);
-        
+
         Donation donation = new Donation();
         donation.setName(name);
-      
+        donation.setTotal(10000);
         donation.setDescription(description);
-    
-        
+
         mockMvc.perform(post("/adddonation/store")
                 .sessionAttrs(sessionattr)
                 .flashAttr("adddonation", donation))
