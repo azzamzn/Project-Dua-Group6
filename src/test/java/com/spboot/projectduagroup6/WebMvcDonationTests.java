@@ -38,43 +38,7 @@ public class WebMvcDonationTests {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    public void testShowDashboard() throws Exception {
-
-        String email = RandomString.make(10).toLowerCase() + "@mail.com";
-        String password = RandomString.make(10).toLowerCase();
-
-        User user = new User();
-        user.setEmail(email);
-        user.setName("project2");
-        user.setPassword(password);
-
-        mockMvc.perform(post("/register")
-                .flashAttr("user", user))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(MockMvcResultMatchers.redirectedUrl("/login"));
-
-        User userLogin = new User();
-        userLogin.setEmail(email);
-        userLogin.setPassword(password);
-
-        mockMvc.perform(post("/login")
-                .flashAttr("user", userLogin))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(MockMvcResultMatchers.redirectedUrl("/"))
-                .andDo(print());
-
-        HashMap<String, Object> sessionattr = new HashMap<String, Object>();
-
-        sessionattr.put("id", user.getId());
-        sessionattr.put("email", user.getEmail());
-        sessionattr.put("name", user.getName());
-        sessionattr.put("loggedIn", true);
-
-        mockMvc.perform(get("/")
-                .sessionAttrs(sessionattr))
-                .andExpect(status().isOk());
-    }
+    
 
     @Test
     public void testCreateDonation() throws Exception {

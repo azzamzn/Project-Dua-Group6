@@ -10,6 +10,7 @@ package com.spboot.projectduagroup6;
  * @author Dzakirah Septialisa
  */
 import com.spboot.projectduagroup6.models.User;
+import java.util.HashMap;
 import net.bytebuddy.utility.RandomString;
 import static org.hamcrest.Matchers.containsString;
 import org.junit.jupiter.api.Test;
@@ -24,9 +25,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  *
@@ -150,4 +154,41 @@ public class WebMvcRegisterTests {
                 .andDo(print());
     }
 
+    @Test
+    public void testShowDashboard() throws Exception {
+
+        String email = RandomString.make(10).toLowerCase() + "@mail.com";
+        String password = RandomString.make(10).toLowerCase();
+
+        User user = new User();
+        user.setEmail(email);
+        user.setName("project2");
+        user.setPassword(password);
+
+        mockMvc.perform(post("/register")
+                .flashAttr("user", user))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(MockMvcResultMatchers.redirectedUrl("/login"));
+
+        User userLogin = new User();
+        userLogin.setEmail(email);
+        userLogin.setPassword(password);
+
+        mockMvc.perform(post("/login")
+                .flashAttr("user", userLogin))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(MockMvcResultMatchers.redirectedUrl("/"))
+                .andDo(print());
+
+        HashMap<String, Object> sessionattr = new HashMap<String, Object>();
+
+        sessionattr.put("id", user.getId());
+        sessionattr.put("email", user.getEmail());
+        sessionattr.put("name", user.getName());
+        sessionattr.put("loggedIn", true);
+
+        mockMvc.perform(get("/")
+                .sessionAttrs(sessionattr))
+                .andExpect(status().isOk());
+    }
 }
