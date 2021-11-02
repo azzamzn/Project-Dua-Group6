@@ -30,29 +30,17 @@ public class WebMvcUserTest {
 @Test
 @Rollback(false)
 public void testUpdateUser() {
-    User user = repo.findByEmail("email");
+    User user = repo.getById(4);
     user.setName("projectdua");
-    user.setEmail("email");
+    user.setEmail("ica@gmail.com");
     user.setPassword("password");
     
     repo.save(user);
      
-    User updatedUser = repo.findByEmail("email");
+    User updatedUser = repo.findByEmail("ica@gmail.com");
      
-    assertThat(updatedUser.getEmail()).isEqualTo("email");
+    assertThat(updatedUser.getEmail()).isEqualTo("ica@gmail.com");
 }  
 
 
-@Test
-@Rollback(false)
-public void testDeleteUser() {
-    User user = repo.findByEmail("email");
-     
-    repo.delete(user.getEmail());
-     
-    User deleteUser = repo.findByEmail("email");
-     
-    assertThat(deleteUser).isNull();       
-     
-}
 }

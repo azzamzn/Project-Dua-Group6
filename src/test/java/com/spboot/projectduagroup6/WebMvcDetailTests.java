@@ -7,9 +7,11 @@ package com.spboot.projectduagroup6;
 
 /**
  *
- * @author Dzakirah Septialisa
+ * @author Dell
  */
+import com.spboot.projectduagroup6.models.Detail;
 import com.spboot.projectduagroup6.models.Donation;
+import com.spboot.projectduagroup6.models.Message;
 import com.spboot.projectduagroup6.models.User;
 import java.util.HashMap;
 import net.bytebuddy.utility.RandomString;
@@ -26,58 +28,19 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-/**
- *
- * @author Hudya
- */
+
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class WebMvcDonationTests {
+public class WebMvcDetailTests {
 
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    public void testShowDashboard() throws Exception {
-
-        String email = RandomString.make(10).toLowerCase() + "@mail.com";
-        String password = RandomString.make(10).toLowerCase();
-
-        User user = new User();
-        user.setEmail(email);
-        user.setName("project2");
-        user.setPassword(password);
-
-        mockMvc.perform(post("/register")
-                .flashAttr("user", user))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(MockMvcResultMatchers.redirectedUrl("/login"));
-
-        User userLogin = new User();
-        userLogin.setEmail(email);
-        userLogin.setPassword(password);
-
-        mockMvc.perform(post("/login")
-                .flashAttr("user", userLogin))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(MockMvcResultMatchers.redirectedUrl("/"))
-                .andDo(print());
-
-        HashMap<String, Object> sessionattr = new HashMap<String, Object>();
-
-        sessionattr.put("id", user.getId());
-        sessionattr.put("email", user.getEmail());
-        sessionattr.put("name", user.getName());
-        sessionattr.put("loggedIn", true);
-
-        mockMvc.perform(get("/")
-                .sessionAttrs(sessionattr))
-                .andExpect(status().isOk());
-    }
+   
 
     @Test
-    public void testCreateDonation() throws Exception {
+    public void testCreateDetail() throws Exception {
 
         String email = RandomString.make(10).toLowerCase() + "@mail.com";
         String password = RandomString.make(10).toLowerCase();
@@ -112,24 +75,25 @@ public class WebMvcDonationTests {
                 .sessionAttrs(sessionattr))
                 .andExpect(status().isOk());
 
-        mockMvc.perform(get("/adddonation")
+        mockMvc.perform(get("/detail/create")
                 .sessionAttrs(sessionattr))
                 .andExpect(status().isOk());
 
-        String name = "name-" + RandomString.make(10).toLowerCase();
-        String description = "desc-" + RandomString.make(50).toLowerCase();
-
-        Donation don = new Donation();
-        don.setId(20);
-
+       
+        Detail det = new Detail();
+       
+       
         Donation donation = new Donation();
-        donation.setName(name);
-        donation.setTotal(10000);
-        donation.setDescription(description);
+        donation.setId(1);
+        det.setTotal(10000);
+        det.setReceipt("img.jpg");
+        det.setMethod("DANA");
+        det.setDonation(donation);
+   
 
-        mockMvc.perform(post("/adddonation/store")
+        mockMvc.perform(post("/detail/store")
                 .sessionAttrs(sessionattr)
-                .flashAttr("adddonation", donation))
+                .flashAttr("detail", det))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/"))
                 .andDo(print());

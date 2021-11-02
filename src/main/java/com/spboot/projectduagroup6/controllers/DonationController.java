@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
@@ -43,7 +44,17 @@ public class DonationController {
     }
 
     @PostMapping("/adddonation/store")
-    public String store(@ModelAttribute("adddonation") Donation donation) {
+    public String store(@ModelAttribute("adddonation") Donation donation, RedirectAttributes ra) throws Exception {
+        if (donation.getName().equals("")) {
+            ra.addFlashAttribute("danger", "Name cannot be null!");
+            return "redirect:/adddonation";
+        }
+        
+        if (donation.getDescription().equals("")) {
+            ra.addFlashAttribute("danger", "Description cannot be null!");
+            return "redirect:/adddonation";
+        }
+        
         donationInterface.store(donation);
         return "redirect:/";
     }

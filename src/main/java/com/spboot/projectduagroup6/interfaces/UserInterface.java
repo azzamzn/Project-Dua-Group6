@@ -14,10 +14,10 @@ import java.util.List;
  * @author Dell
  */
 public interface UserInterface {
-    void register(User user) throws Exception;
+    User register(User user) throws Exception;
     User auth(String email, String password) throws Exception;
     List<User> getAll();
-    void store(User user);
+    User store(User user);
     User getById(long id);
     void delete(long id);
 }

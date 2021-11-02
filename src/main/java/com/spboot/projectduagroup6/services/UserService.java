@@ -27,11 +27,11 @@ public class UserService implements UserInterface {
     private UserRepository userRepository;
 
     @Override
-    public void register(User user) throws Exception {
+    public User register(User user) throws Exception {
         String hashed = this.hash(user.getPassword());
         user.setPassword(hashed);
 
-        this.userRepository.save(user);
+        return this.userRepository.save(user);
     }
 
     @Override
@@ -79,8 +79,9 @@ public class UserService implements UserInterface {
     }
 
     @Override
-    public void store(User user) {
-        this.userRepository.save(user);
+    public User store(User user) {
+        return this.userRepository.save(user);
+        
     }
 
     @Override

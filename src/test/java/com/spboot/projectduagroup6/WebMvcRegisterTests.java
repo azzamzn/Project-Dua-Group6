@@ -51,7 +51,7 @@ public class WebMvcRegisterTests {
 
         User user = new User();
         user.setEmail(email);
-        user.setName("Hudya");
+        user.setName("projecttest");
         user.setPassword(password);
 
         mockMvc.perform(post("/register")
@@ -127,7 +127,7 @@ public class WebMvcRegisterTests {
 
         User user = new User();
         user.setEmail(email);
-        user.setName("Hudya");
+        user.setName("Project2");
         user.setPassword(password);
 
         mockMvc.perform(post("/register")
