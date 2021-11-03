@@ -83,8 +83,8 @@ public class WebMvcDonationTests {
         String name = "name-" + RandomString.make(10).toLowerCase();
         String description = "desc-" + RandomString.make(50).toLowerCase();
 
-        Donation don = new Donation();
-        don.setId(20);
+        
+        
 
         Donation donation = new Donation();
         donation.setName(name);

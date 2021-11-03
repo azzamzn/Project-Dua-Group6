@@ -81,8 +81,7 @@ public class WebMvcMessageTests {
         String message = "mess-" + RandomString.make(50).toLowerCase();
 
         Message mes = new Message();
-        mes.setId(20);
-
+        user.setId(1);
         
         mes.setMessage(message);
    
