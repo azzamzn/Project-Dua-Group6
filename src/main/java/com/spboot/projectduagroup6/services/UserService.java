@@ -79,8 +79,8 @@ public class UserService implements UserInterface {
     }
 
     @Override
-    public User store(User user) {
-        return this.userRepository.save(user);
+    public void store(User user) {
+        this.userRepository.save(user);
         
     }
 

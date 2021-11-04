@@ -30,11 +30,7 @@ public class MessageController {
     @Autowired
     private MessageInterface messageInterface;
 
-    @GetMapping("/message")
-    public String index(Model model) {
-        model.addAttribute("list", messageInterface.getAll());
-        return "message";
-    }
+    
 
     @GetMapping("/sendmessage")
     public String create(Model model) {

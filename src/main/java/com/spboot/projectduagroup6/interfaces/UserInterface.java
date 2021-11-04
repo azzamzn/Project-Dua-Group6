@@ -17,7 +17,7 @@ public interface UserInterface {
     User register(User user) throws Exception;
     User auth(String email, String password) throws Exception;
     List<User> getAll();
-    User store(User user);
+    void store(User user);
     User getById(long id);
     void delete(long id);
 }

@@ -45,15 +45,7 @@ public class DonationController {
 
     @PostMapping("/adddonation/store")
     public String store(@ModelAttribute("adddonation") Donation donation, RedirectAttributes ra) throws Exception {
-        if (donation.getName().equals("")) {
-            ra.addFlashAttribute("danger", "Name cannot be null!");
-            return "redirect:/adddonation";
-        }
-        
-        if (donation.getDescription().equals("")) {
-            ra.addFlashAttribute("danger", "Description cannot be null!");
-            return "redirect:/adddonation";
-        }
+       
         
         donationInterface.store(donation);
         return "redirect:/";
