@@ -27,20 +27,20 @@ public class Detail {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_donation")
+    @JoinColumn(name = "id_donationn")
     private Donation donation;
 
     @ManyToOne
-    @JoinColumn(name = "id_user")
+    @JoinColumn(name = "id_userr")
     private User user;
 
-    @Column(name = "receipt")
+    @Column(name = "receiptt")
     private String receipt;
 
-    @Column(name = "total")
+    @Column(name = "totall")
     private long total;
 
-    @Column(name = "method")
+    @Column(name = "methodd")
     private String method;
 
     public long getId() {
